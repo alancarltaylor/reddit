@@ -9,7 +9,7 @@
       restrict: 'E',
       templateUrl: '/layout/layout.directive.html',
       controller: function () {
-        console.log("I was called");
+        console.log("layout directive was called");
       }
     }
   }

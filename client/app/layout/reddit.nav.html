@@ -1,1 +1,79 @@
-<div>In the nav directive</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <li>
+          <a ng-click="view.showPostForm()" href="#">
+            <span  class="glyphicon glyphicon-plus"></span>
+            Submit Post</a>
+          </li>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" ng-model="cloneSearch">
+            </div>
+          </form>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort by {{sortCategory}}
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" id="order">
+              <li>
+                <a ng-click="sortCategory='-score'" href="#">Sort by Votes</a>
+              </li>
+              <li>
+                <a ng-click="sortCategory='dateAdded'" href="#">Sort by Date Added</a>
+              </li>
+              <li>
+                <a ng-click="sortCategory='author'" href="#">Sort by Author</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+<main>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+
+            <!-- <form ng-submit="addPost(newPost)" name='modalForm' class="css-form" ng-show="view.createPost">
+              <fieldset class="form-group">
+              <label>Title</label>
+              <input type="text" class="form-control" ng-model='newPost.title' name='inputTitle' minlength='5'>
+              <div ng-messages='modalForm.inputTitle.$error'>
+              </div>
+              </fieldset>
+              <fieldset class="form-group">
+              <label>Author</label>
+              <input type="text" class="form-control" ng-model='newPost.author' name='inputAuthor' minlength='4'>
+              <div ng-messages='modalForm.inputAuthor.$error'>
+              </div>
+              </fieldset>
+              <fieldset class="form-group">
+              <label>Description</label>
+              <input type="text" class="form-control" ng-model='newPost.description' name='inputDescription' minlength='5'>
+              <div ng-messages='modalForm.inputDescription.$error'>
+              </div>
+              </fieldset>
+              <fieldset class="form-group">
+              <label>Image URL</label>
+              <input type="text" class="form-control" ng-model='newPost.image' name='inputUrl' minlength='5'>
+              <div ng-messages='modalForm.inputUrl.$error'>
+              </div>
+              </fieldset>
+
+          <div class="modal-footer">
+            <button class="btn btn-primary center-block" type="submit" class="btn modalButton" data-toggle="modal" data-target="#myModal">Save changes</button>
+          </div>
+        </form> -->
+          </div>
+  </div>
+</main>
