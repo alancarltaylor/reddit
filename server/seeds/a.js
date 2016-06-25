@@ -4,8 +4,23 @@ exports.seed = function(knex, Promise) {
     knex('users').del(),
 
     // Inserts seed entries
-    knex('users').insert({id: 1, name: 'Joe', password: 'password'}),
-    knex('users').insert({id: 2, name: 'Kate', password: 'password'}),
-    knex('users').insert({id: 3, name: 'Boomps', password: 'password'})
-  );
+    knex('users').insert([
+    {
+      name:'matthew',
+      email:'bouchard.matthewj@gmail.com',
+      password:'password'
+    },
+    {
+      name:'liza',
+      email:'lizashademiller@gmail.com',
+      password:'password'
+    },
+    {
+      name:'mateos',
+      email:'bouchard221@gmail.com',
+      password:'password'
+    }
+  ])
+
+)
 };

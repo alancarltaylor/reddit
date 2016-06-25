@@ -1,26 +1,17 @@
 angular.module('reddit', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
-$urlRouterProvider.otherwise('/');
+$urlRouterProvider.otherwise('/404');
 $stateProvider
 
     // HOME STATES AND NESTED VIEWS ========================================
     .state('home', {
         url: '/',
-        template: "<my-layout></my-layout>"  //"<my-layout></my-layout>"
+        template: "<my-layout></my-layout>"
+    })
+    .state('404', {
+      url: '/404',
+      template: "<h1>You must be lost or something.</h1>"
+      
     })
 
-    // nested list with custom controller
-    // .state('home.list', {
-    //     url: '/list',
-    //     templateUrl: 'partial-home-list.html',
-    //     controller: function($scope) {
-    //         $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-    //     }
-    // })
-    //
-    // // nested list with just some random string data
-    // .state('home.paragraph', {
-    //     url: '/paragraph',
-    //     template: 'I could sure use a drink right now.'
-    // })
   })

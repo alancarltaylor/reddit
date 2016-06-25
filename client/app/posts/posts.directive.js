@@ -3,15 +3,25 @@
 
   angular.module('reddit')
     .directive('redditPosts', appDirective);
-    console.log("layout directive was called, but didn't go into my controller");
 
   function appDirective () {
     return {
       restrict: 'E',
       templateUrl: '/posts/posts.directive.html',
-      controller: function () {
-        console.log("layout directive was called, and went into my controller");
-      }
+      controller: ['$scope', 'postService', '$log', function ($scope, postService, $log) {
+        postService.all().then(function (posts) {
+          console.log(posts);
+        $scope.posts = posts;
+      });
+      $scope.voteChange = function(post, direction) {
+        post.votes += direction;
+        $log.info('vote thing clicked, direction is: ', direction);
+        postService.changeVotes(post.id, direction).then(function(results){
+          $log.info('vote results', results)
+        })
+      };
+
+      }]
     }
   }
 }());

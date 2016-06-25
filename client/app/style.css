@@ -1,0 +1,68 @@
+div.post {
+  background-color: rgb(222, 222, 222);
+  border-radius: 8px;
+  margin: auto;
+  margin: 2% 2%;
+  padding: 2% 2% 3% 2%;
+  min-height: 280px;
+
+}
+
+img.post {
+  height: 200px;
+  width: 325px;
+  float: left;
+  margin-right: 1%;
+}
+
+p.author {
+  text-align: right;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.css-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+}
+
+.comments {
+  position: relative;
+  margin-left: 28%;
+
+}
+.ng-enter{
+      transition: 0.5s ease all;
+      opacity: 0;
+  }
+  .ng-enter.ng-enter-active{
+      opacity: 1;
+  }
+  .ng-leave{
+      transition: 0.5s ease all;
+      opacity: 1;
+  }
+  .ng-leave.ng-leave-active{
+      opacity: 0;
+  }
+  .fade.ng-enter {
+    animation: 2s appear;
+  }
+  .fade.ng-leave {
+    animation: 1s disappear;
+  }
+
+.upvotes{
+  float: left;
+  padding-right: 1%;
+  padding-top: 35%;
+}
