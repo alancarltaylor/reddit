@@ -1,6 +1,6 @@
 angular.module('reddit', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
-$urlRouterProvider.otherwise('/404');
+$urlRouterProvider.otherwise('/');
 $stateProvider
 
     // HOME STATES AND NESTED VIEWS ========================================
@@ -11,7 +11,7 @@ $stateProvider
     .state('404', {
       url: '/404',
       template: "<h1>You must be lost or something.</h1>"
-      
+
     })
 
   })

@@ -56,7 +56,7 @@ router.post('/votes', (req, res, next) =>{
   } else if (req.body.direction === -1){
     direction = 'votes - 1'
   }
-  
+
   var results = {};
 
 
@@ -86,6 +86,18 @@ router.post('/votes', (req, res, next) =>{
     res.send( {err} )
   });
 });
+
+router.post('/comments', function(req, res, next) {
+  console.log('req.body', req.body);
+  knex('comments')
+  .insert(req.body)
+  .then(function(comments){
+    console.log("comments from api.js: ", comments);
+    res.end();
+  })
+
+});
+
 
 
 

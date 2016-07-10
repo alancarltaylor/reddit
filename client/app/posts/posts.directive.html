@@ -20,10 +20,10 @@
           </p>
           <div class="addComment form-group form-inline" ng-show="post.addComment">
             <label for="">Author:</label>
-            <input class="form-control" type="text" placeholder="Author" ng-model="post.newCommentAuthor">
+            <input class="form-control" type="text" placeholder="Author">
             <label for="">Comment:</label>
-            <input class="form-control" type="text" placeholder="Comment" ng-model="post.newCommentComment">
-            <button ng-click="addComment(post.id)" class="btn btn-default">Add Comment</button>
+            <input class="form-control" type="text" placeholder="Comment" ng-model="newComment.comment">
+            <button ng-click="addComment(newComment)" class="btn btn-default">Add Comment</button>
           </div>
           <div class="comments" ng-show="post.showComments">
             <div class="comment" ng-repeat="post in post.comments">

@@ -17,10 +17,14 @@
         post.votes += direction;
         $log.info('vote thing clicked, direction is: ', direction);
         postService.changeVotes(post.id, direction).then(function(results){
-          $log.info('vote results', results)
         })
       };
-
+      $scope.addComment = function (newComment) {
+      console.log('newComment', newComment);
+      postService.addComment(newComment).then(function(response){
+        $log.info('response from comment post: ',response)
+      })
+    }
       }]
     }
   }

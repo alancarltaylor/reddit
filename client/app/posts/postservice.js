@@ -21,6 +21,15 @@ angular.module('reddit').factory('postService', function($http, $log) {
         return this.posts;
       })
 
+    },
+
+    addComment: function(comment) {
+      console.log('comment', comment);
+      return $http.post('http://localhost:4000/api/v1/comments', comment)
+       .then(function(response){
+         $log.info("response after posting comment: ", response.data)
+         return response.data
+       })
     }
     // getPost: function (postId) {
     //   return $http.get('/api/posts/' + postId);
